@@ -1,13 +1,6 @@
-const express = require("express");
+const coreAPI = require("./core/core");
+const PORT = require("./utils/portAPI");
 
-const app = express();
-
-app.use(express.json());
-
-app.get("/", (request, response) => {
-  response.send({ message: "Olá Mundo!" });
-});
-
-app.listen(3333, () => {
+coreAPI.listen(PORT, () => {
   console.log("Server application was started...");
 });
