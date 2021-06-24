@@ -8,7 +8,7 @@ const Event = new Schema(
       required: true,
     },
     theme: {
-      type: Number,
+      type: String,
       required: true,
     },
     adress: {
@@ -20,24 +20,46 @@ const Event = new Schema(
       type: String,
       required: true,
     },
-    participants: {
-      type: Schema.Types.ObjectId,
-      ref: "users",
-      required: false,
-    },
+    participants: [
+      {
+        id: {
+          type: String,
+          required: true,
+        },
+        name: {
+          type: String,
+          required: true,
+        },
+        registration: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
     oclock: {
       type: String,
       required: true,
     },
     date: {
-      type: Date(),
+      type: Date,
       required: true,
     },
-    assigments: {
-      type: Schema.Types.ObjectId,
-      ref: "assigments",
-      required: false,
-    },
+    assigments: [
+      {
+        name: {
+          type: String,
+          required: true,
+        },
+        theme: {
+          type: String,
+          required: true,
+        },
+        dutarion: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
   },
   { timestamps: true }
 );

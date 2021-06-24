@@ -5,6 +5,7 @@ mongoose
   .connect("mongodb://localhost/chalengeinsightlab", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useFindAndModify: false,
   })
   .then(() => {
     console.log("Connection to database was started with success...");

@@ -5,7 +5,7 @@ const encoder = require("../config/encoderPass");
 
 module.exports = {
   async list(request, response) {
-    Admin.find()
+    await Admin.find()
       .then((admins) => {
         if (admins.length <= 0) {
           response.send({ message: "No admins registered so far" });
@@ -19,7 +19,7 @@ module.exports = {
   },
 
   async create(request, response) {
-    Admin.find({ email: request.body.email })
+    await Admin.find({ email: request.body.email })
       .then((admin) => {
         if (admin.length == 1) {
           response.send({ message: "This email register other admin" });
@@ -51,21 +51,25 @@ module.exports = {
   async login(request, response) {
     const passHashed = encoder(request.body.pass);
 
-    Admin.find({ login: request.body.login, pass: passHashed })
+    await Admin.find({ login: request.body.login, pass: passHashed })
       .then((admin) => {
         if (admin.length == 1) {
           const adminLoged = {
+            id: admin[0]._id,
             name: admin[0].name,
             email: admin[0].email,
             loged: true,
+            user: false,
             admin: true,
           };
           response.send(adminLoged);
         } else if (admin.length <= 0) {
           const adminNoLoged = {
+            id: "No loged",
             name: "No loged",
             email: "No loged",
             loged: false,
+            user: false,
             admin: false,
           };
           response.send(adminNoLoged);
