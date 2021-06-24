@@ -33,7 +33,7 @@ const Event = new Schema(
       type: Date(),
       required: true,
     },
-    assigment: {
+    assigments: {
       type: Schema.Types.ObjectId,
       ref: "assigments",
       required: false,
