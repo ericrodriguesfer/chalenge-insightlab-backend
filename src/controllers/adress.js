@@ -27,8 +27,8 @@ module.exports = {
 
     await new Adress(newAdress)
       .save()
-      .then((adressRegistered) => {
-        response.send(adressRegistered);
+      .then((adress) => {
+        response.send(adress);
       })
       .catch((error) => {
         response.send({ message: "Error register adress: " + error });

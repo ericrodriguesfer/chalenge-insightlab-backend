@@ -35,8 +35,8 @@ module.exports = {
 
           new Admin(newAdmin)
             .save()
-            .then(() => {
-              response.send(newAdmin);
+            .then((admin) => {
+              response.send(admin);
             })
             .catch((error) => {
               response.send({ message: "Error in add new admin: " + error });
