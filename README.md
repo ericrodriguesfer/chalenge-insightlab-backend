@@ -30,6 +30,20 @@ A API implementada consiste na resolução do desafio Full Stack da Insight Lab,
         }
         ~~~
 
+        Usuários já cadastrados:
+        ~~~
+        Adminstrador:
+            login: jose
+            senha: qwe123
+
+        Participantes:
+            login: gustavo
+            senha: qwe123
+
+            login: douglas
+            senha: qwe123
+        ~~~
+
 ## CASO QUEIRA SABER MAIS SOBRE O PROJETO
 
 Pode entrar em contato comigo pelo seguinte email: ericdesenvolvedor7@gmail.com
