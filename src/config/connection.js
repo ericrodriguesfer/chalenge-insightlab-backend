@@ -18,8 +18,3 @@ mongoose
   });
 
 module.exports = mongoose;
-
-/*
-username: chalengeinsigthlab
-password: qwe123
-*/
