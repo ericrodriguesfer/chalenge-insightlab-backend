@@ -60,6 +60,7 @@ module.exports = {
           const userLoged = {
             id: user[0]._id,
             name: user[0].name,
+            registration: user[0].registration,
             email: user[0].email,
             loged: true,
             user: true,
@@ -70,6 +71,7 @@ module.exports = {
           const userNoLoged = {
             id: "No loged",
             name: "No loged",
+            registration: "No loged",
             email: "No loged",
             loged: false,
             user: false,
